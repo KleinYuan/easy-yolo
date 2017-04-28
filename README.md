@@ -2,15 +2,15 @@
 
 Here, we guide you step by step with a bare machine to get a real time object detector with Deep Learning Neural Network.
 
-Claim:This project is based on [darknet](https://github.com/pjreddie/darknet)
+-  Claim:This project is based on [darknet](https://github.com/pjreddie/darknet)
 
-Task: Real time object detection and classification
+-  Task: Real time object detection and classification
 
-Paper: [YOLO9000: Better, Faster, Stronger](https://arxiv.org/abs/1612.08242)
+-  Paper: [YOLO9000: Better, Faster, Stronger](https://arxiv.org/abs/1612.08242)
 
-Dependencies: Ubuntu 14.04/OpenCV v2.4.13/CUDA 8.0/cuDNN v5.0
+-  Dependencies: Ubuntu 14.04/OpenCV v2.4.13/CUDA 8.0/cuDNN v5.0
 
-Languages: C + Python 2.7 (Python 3.5 will work but you need to modify files in /scripts a little bit)
+-  Languages: C + Python 2.7 (Python 3.5 will work but you need to modify files in /scripts a little bit)
 
 # Step by Step Tutorial
 
@@ -27,14 +27,18 @@ At least one `NVIDIA GPU Card` is required such as `GeForce` series to enable GP
 
 ##### Descriptions:
 
-`OpenCV` :  OpenCV is useful no matter whether you want to enable GPU mode and here we use `OpenCV v2.4.13` for `Ubuntu 14.04`;
-`NVIDIA Driver`: NVIDIA Driver is needed for machine to communicate with GPU;
-`CUDA`: CUDA is a parallel computing platform and application programming interface (API) model created by Nvidia and we use `CUDA 8.0` here;
-`cuDNN`: cuDNN is a GPU acceleration library, especially for deep learning neural networks (i. e., it speeds up when you work with GPU) and we use `cuDNN v5.0 for CUDA 8.0` here
+- [ ] `OpenCV` :  OpenCV is useful no matter whether you want to enable GPU mode and here we use `OpenCV v2.4.13` for `Ubuntu 14.04`;
+
+- [ ] `NVIDIA Driver`: NVIDIA Driver is needed for machine to communicate with GPU;
+
+- [ ] `CUDA`: CUDA is a parallel computing platform and application programming interface (API) model created by Nvidia and we use `CUDA 8.0` here;
+
+- [ ] `cuDNN`: cuDNN is a GPU acceleration library, especially for deep learning neural networks (i. e., it speeds up when you work with GPU) and we use `cuDNN v5.0 for CUDA 8.0` here
 
 ##### Install:
 
 `OpenCV`:
+
 ```
 sudo apt-get update
 sudo apt-get install -y build-essential
@@ -58,6 +62,7 @@ sudo make install
 Referring from :https://gist.github.com/bigsnarfdude/7305c8d8335c7cfc91888485a33d9bd9
 
 `NVIDIA Driver`:
+
 ```
 sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install build-essential
@@ -66,7 +71,9 @@ chmod +x cuda_8.0.61_375.26_linux-run
 mkdir nvidia_installers
 ./cuda_8.0.61_375.26_linux-run -extract=${PWD}/nvidia_installers
 ```
+
 If you are using AWS EC2 Ubuntu Machines, also run following(which is to disable nouveau since it conflicts with NVIDIA's kernel module and please PAY ATTENTION TO THE LAST LINE, which requires REBOOT. Pay extra attention, if you are using AWS EC2 spot instance):
+
 ```
 sudo apt-get install linux-image-extra-virtual
 echo "blacklist nouveau" | sudo tee -a /etc/modprobe.d/blacklist-nouveau.conf
@@ -78,7 +85,9 @@ echo options nouveau modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf
 sudo update-initramfs -u
 sudo reboot
 ```
+
 Then
+
 ```
 sudo apt-get install linux-source
 sudo apt-get install linux-headers-`uname -r`
@@ -86,6 +95,7 @@ sudo ./nvidia_installers/NVIDIA-Linux-x86_64-375.26.run -s
 ```
 
 `CUDA`:
+
 ```
 sudo modprobe nvidia
 sudo apt-get install build-essential
@@ -98,7 +108,13 @@ sudo ldconfig
 ```
 
 `cuDNN`:
-First, download `cudnn-8.0-linux-x64-v5.0-ga.tgz` from https://developer.nvidia.com/cudnn (You may need to sign up a NVIDIA developer to download it and don't panic, it's free.)
+
+First,
+
+download `cudnn-8.0-linux-x64-v5.0-ga.tgz` from https://developer.nvidia.com/cudnn (You may need to sign up a NVIDIA developer to download it and don't panic, it's free.)
+
+![nvidia-cudnn](https://cloud.githubusercontent.com/assets/8921629/25516102/621cd374-2b9d-11e7-8afa-8351f700ced4.png)
+
 Then:
 ```
 tar -zxf cudnn-8.0-linux-x64-v5.0-ga.tgz
@@ -107,10 +123,14 @@ sudo cp ./cuda/include/cudnn.h /usr/local/cuda/include/
 ```
 
 Validate:
-`OpenCV`: ```pkg-config opencv --cflags```
-`NVIDIA Driver`: ```sudo nvidia-smi```
-`CUDA`: ``` nvcc --version```
-`cuDNN`: No need to validate, install cuDNN is purely just doing copy&paste to your local machine
+
+- [ ] `OpenCV`: ```pkg-config opencv --cflags```
+
+- [ ] `NVIDIA Driver`: ```sudo nvidia-smi```
+
+- [ ] `CUDA`: ``` nvcc --version```
+
+- [ ] `cuDNN`: No need to validate, install cuDNN is purely just doing copy&paste to your local machine
 
 
 ### Step-2. Download this repo
@@ -120,6 +140,7 @@ git clone https://github.com/KleinYuan/easyYolo.git
 ```
 
 And create a folder called `devkit` in root of this repo and also sub-folders like below:
+
 ```
 +-- cfg
 +-- scripts
@@ -161,6 +182,7 @@ Go ahead and collect many many images and put all of them into `devkit/2017/Imag
 
 #### c. Label images
 `labelImg` will eventually create .xml file including bounding box coord, (class) name and file information
+
 Sample .xml:
 ```
 <annotation verified="no">
