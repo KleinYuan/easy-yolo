@@ -313,13 +313,13 @@ make train
 
 *Command above will train model with single GPU*
 
-If you want to train with multiple GPUs you need to first still run above and then wait for a model called tiny-yolo_1000.weights (or whatever weights files larger than 1000) occur in backup folder.
+If you want to train with multiple GPUs you need to first still run above and then wait for a model called easy_1000.weights (or whatever weights files larger than 1000) occur in backup folder.
 
 And then run:
 ```
 make train-multi-gpus
 ```
-(Examples above assume that you have 2 GPUs and with tiny-yolo_1000.weights)
+(Examples above assume that you have 2 GPUs and with easy_1000.weights)
 
 
 TADA! You can go to sleep and wait for several hours (days) to get a trained model sitting in `backup` folder.
@@ -340,8 +340,8 @@ make test-camera
 
 # Further Work
 
-- Add a python wrapper
-- Build a docker image to automate the entire process (could be tricky to mount with camera tho)
+- [X] Add a python wrapper
+- [ ] Build a docker image to automate the entire process (could be tricky to mount with camera tho)
 
 # License
 [License](LICENSE)
