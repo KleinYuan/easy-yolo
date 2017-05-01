@@ -100,17 +100,17 @@ Therefore, you need to kill the X server to install nvidia driver (which by defa
 
 Therefore:
 
--[X] Press Control + ALT + F1
+- [X] Press Control + ALT + F1
 
--[X] Type your ubuntu system username (exp. ubuntu) and password to log in
+- [X] Type your ubuntu system username (exp. ubuntu) and password to log in
 
--[X] Kill X Server by `sudo service lightdm stop`
+- [X] Kill X Server by `sudo service lightdm stop`
 
--[X] Navigate to the correct folder and Install NVIDIA Driver in silent mode `sudo ./nvidia_installers/NVIDIA-Linux-x86_64-375.26.run -s`
+- [X] Navigate to the correct folder and Install NVIDIA Driver in silent mode `sudo ./nvidia_installers/NVIDIA-Linux-x86_64-375.26.run -s`
 
--[X] Restart X server by `sudo service lightdm start`
+- [X] Restart X server by `sudo service lightdm start`
 
--[X] Go back to your fancy UI if you are using any by Control + ALT + F7
+- [X] Go back to your fancy UI if you are using any by Control + ALT + F7
 
 
 `CUDA`:
