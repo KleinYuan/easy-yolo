@@ -72,6 +72,9 @@ mkdir nvidia_installers
 ./cuda_8.0.61_375.26_linux-run -extract=${PWD}/nvidia_installers
 ```
 
+###### Highlight!!!
+For Ubuntu, if you install the system together with Windows sharing BIOS/UEFI, you probably would like to turn off `Security Boot` so that you don't have any signature issues while installing the NVIDIA driver.
+
 If you are using AWS EC2 Ubuntu Machines, also run following(which is to disable nouveau since it conflicts with NVIDIA's kernel module and please PAY ATTENTION TO THE LAST LINE, which requires REBOOT. Pay extra attention, if you are using AWS EC2 spot instance):
 
 ```
