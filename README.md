@@ -158,7 +158,7 @@ Validate:
 ### Step-2. Download this repo
 
 ```
-git clone https://github.com/KleinYuan/easyYolo.git
+git clone https://github.com/KleinYuan/easy-yolo.git
 ```
 
 And create a folder called `devkit` in root of this repo and also sub-folders like below:
