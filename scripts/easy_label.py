@@ -23,7 +23,7 @@ def convert(size, box):
 
 def convert_annotation(year, image_id):
     in_file = open('devkit/%s/Annotations/%s.xml'%(year, image_id))
-    out_file = open('devkit/%s/Labels/%s.txt'%(year, image_id), 'w')
+    out_file = open('devkit/%s/labels/%s.txt'%(year, image_id), 'w')
     tree=ET.parse(in_file)
     root = tree.getroot()
     size = root.find('size')
@@ -44,8 +44,8 @@ def convert_annotation(year, image_id):
 wd = getcwd()
 
 for year, image_set in sets:
-    if not os.path.exists('devkit/%s/Labels/'%(year)):
-        os.makedirs('devkit/%s/Labels/'%(year))
+    if not os.path.exists('devkit/%s/labels/'%(year)):
+        os.makedirs('devkit/%s/labels/'%(year))
     image_ids = open('devkit/%s/ImageSets/%s.txt'%(year, image_set)).read().strip().split()
     list_file = open('%s_%s.txt'%(year, image_set), 'w')
     for image_id in image_ids:

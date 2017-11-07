@@ -169,7 +169,7 @@ And create a folder called `devkit` in root of this repo and also sub-folders li
 |       +-- Annotations
 |       +-- ImageSets
 |       +-- Images
-|       +-- Labels
+|       +-- labels
 .gitignore
 darkenet19_448.conv.23
 easy.names
@@ -263,7 +263,7 @@ Then you will see:
 |           +-- 01.png
 |           +-- 02.png
 |           +-- ...
-|       +-- Labels
+|       +-- labels
 |           +-- 01.txt
 |           +-- 02.txt
 |           +-- ...
@@ -296,6 +296,8 @@ Then continue run:
 python ${PWD}/scripts/in_place.py -f ${PWD}/cfg/easy.cfg -o ${FILTERS_NUM} -n C
 
 ```
+
+*Note: If those scripts does not work, you just manually replace them.*
 
 ### Step-5. Make darknet executable and Train
 

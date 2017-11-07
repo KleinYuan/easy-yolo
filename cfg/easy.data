@@ -1,6 +1,6 @@
 classes= ${CLASS_NUM}
-train  = ../easyYolo/2017_train.txt
-valid  = ../easyYolo/2017_val.txt
+train  = ../easy-yolo/2017_train.txt
+valid  = ../easy-yolo/2017_val.txt
 names = data/easy.data
 backup = backup
 
