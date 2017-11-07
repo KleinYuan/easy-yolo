@@ -72,6 +72,9 @@ mkdir nvidia_installers
 ./cuda_8.0.61_375.26_linux-run -extract=${PWD}/nvidia_installers
 ```
 
+###### Highlight!!!
+For Ubuntu, if you install the system together with Windows sharing BIOS/UEFI, you probably would like to turn off `Security Boot` so that you don't have any signature issues while installing the NVIDIA driver.
+
 If you are using AWS EC2 Ubuntu Machines, also run following(which is to disable nouveau since it conflicts with NVIDIA's kernel module and please PAY ATTENTION TO THE LAST LINE, which requires REBOOT. Pay extra attention, if you are using AWS EC2 spot instance):
 
 ```
@@ -100,17 +103,17 @@ Therefore, you need to kill the X server to install nvidia driver (which by defa
 
 Therefore:
 
--[X] Press Control + ALT + F1
+- [X] Press Control + ALT + F1
 
--[X] Type your ubuntu system username (exp. ubuntu) and password to log in
+- [X] Type your ubuntu system username (exp. ubuntu) and password to log in
 
--[X] Kill X Server by `sudo service lightdm stop`
+- [X] Kill X Server by `sudo service lightdm stop`
 
--[X] Navigate to the correct folder and Install NVIDIA Driver in silent mode `sudo ./nvidia_installers/NVIDIA-Linux-x86_64-375.26.run -s`
+- [X] Navigate to the correct folder and Install NVIDIA Driver in silent mode `sudo ./nvidia_installers/NVIDIA-Linux-x86_64-375.26.run -s`
 
--[X] Restart X server by `sudo service lightdm start`
+- [X] Restart X server by `sudo service lightdm start`
 
--[X] Go back to your fancy UI if you are using any by Control + ALT + F7
+- [X] Go back to your fancy UI if you are using any by Control + ALT + F7
 
 
 `CUDA`:
@@ -155,7 +158,7 @@ Validate:
 ### Step-2. Download this repo
 
 ```
-git clone https://github.com/KleinYuan/easyYolo.git
+git clone https://github.com/KleinYuan/easy-yolo.git
 ```
 
 And create a folder called `devkit` in root of this repo and also sub-folders like below:
